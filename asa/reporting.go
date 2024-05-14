@@ -171,8 +171,11 @@ type MetaDataObject struct {
 	SupplySources                      []CampaignSupplySource                      `json:"supplySources,omitempty"`
 	AdChannelType                      CampaignAdChannelType                       `json:"adChannelType,omitempty"`
 	OrgID                              int                                         `json:"orgId,omitempty"`
+	AdID                               int64                                       `json:"adId,omitempty"`
+	AdName                             string                                      `json:"adName,omitempty"`
 	CountryOrRegionServingStateReasons *CampaignCountryOrRegionServingStateReasons `json:"countryOrRegionServingStateReasons,omitempty"`
 	BillingEvent                       string                                      `json:"billingEvent,omitempty"`
+	Keyword                            string                                      `json:"keyword,omitempty"`
 	KeywordID                          int64                                       `json:"keywordID,omitempty"`
 	MatchType                          *ReportingKeywordMatchType                  `json:"matchType,omitempty"`
 	CountryOrRegion                    string                                      `json:"countryOrRegion,omitempty"`
@@ -286,11 +289,11 @@ func (s *ReportingService) GetSearchTermLevelReports(ctx context.Context, campai
 	return res, resp, err
 }
 
-// GetCreativeSetLevelReports fetches reports for Creative Sets within a campaign
+// GetAdLevelReports fetches reports for Ads within a campaign
 //
-// https://developer.apple.com/documentation/apple_search_ads/get_creative_set-level_reports
-func (s *ReportingService) GetCreativeSetLevelReports(ctx context.Context, campaignID int64, params *ReportingRequest) (*ReportingResponseBody, *Response, error) {
-	url := fmt.Sprintf("reports/campaigns/%d/creativesets", campaignID)
+// https://developer.apple.com/documentation/apple_search_ads/get_ad-level_reports
+func (s *ReportingService) GetAdLevelReports(ctx context.Context, campaignID int64, params *ReportingRequest) (*ReportingResponseBody, *Response, error) {
+	url := fmt.Sprintf("reports/campaigns/%d/ads", campaignID)
 	res := new(ReportingResponseBody)
 	resp, err := s.client.post(ctx, url, &params, res)
 
