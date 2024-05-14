@@ -20,9 +20,10 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/gungoren/apple-search-ads-go/asa"
-	"github.com/gungoren/apple-search-ads-go/examples/util"
 	"log"
+	
+	"github.com/Midnight-cahq/apple-search-ads-go/asa"
+	"github.com/Midnight-cahq/apple-search-ads-go/examples/util"
 )
 
 var (
