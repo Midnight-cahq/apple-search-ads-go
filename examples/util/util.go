@@ -21,11 +21,12 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/gungoren/apple-search-ads-go/asa"
 	"io"
 	"log"
 	"os"
 	"time"
+
+	"github.com/Midnight-cahq/apple-search-ads-go/asa"
 )
 
 var (
