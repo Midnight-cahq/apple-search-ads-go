@@ -20,9 +20,10 @@ package integration
 
 import (
 	"fmt"
-	"github.com/gungoren/apple-search-ads-go/asa"
 	"os"
 	"time"
+
+	"github.com/Midnight-cahq/apple-search-ads-go/asa"
 )
 
 const (
