@@ -400,6 +400,9 @@ func (c *Client) do(ctx context.Context, req *http.Request, v interface{}) (*Res
 	}
 
 	err := backoff.RetryNotify(op, backoff.NewExponentialBackOff(), notify)
+	if err != nil {
+		return nil, err
+	}
 
 	resp := <-respCh
 
