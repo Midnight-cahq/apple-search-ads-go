@@ -62,6 +62,11 @@ func (d *Date) UnmarshalJSON(data []byte) error {
 		return err
 	}
 
+	// api can return null in value
+	if dateTimeStr == "" {
+		return nil
+	}
+
 	parsed, err := time.Parse(dateFormat, dateStr)
 	if err != nil {
 		return err
