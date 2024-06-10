@@ -181,6 +181,9 @@ type MetaDataObject struct {
 	CountryOrRegion                    string                                      `json:"countryOrRegion,omitempty"`
 	SearchTermText                     *string                                     `json:"SearchTermText,omitempty"`
 	SearchTermSource                   *SearchTermSource                           `json:"searchTermSource,omitempty"`
+	CreativeID                         int64                                       `json:"creativeId,omitempty"`
+	CreativeType                       string                                      `json:"creativeType,omitempty"`
+	ProductPageID                      string                                      `json:"productPageId,omitempty"`
 }
 
 // GrandTotalsRow is the summary of cumulative metrics
