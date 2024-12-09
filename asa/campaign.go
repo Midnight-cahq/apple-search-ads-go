@@ -163,7 +163,7 @@ const (
 // CampaignCountryOrRegionServingStateReasons is the reasons why a campaign can’t run
 //
 // https://developer.apple.com/documentation/apple_search_ads/campaign/countryorregionservingstatereasons
-type CampaignCountryOrRegionServingStateReasons map[string]CampaignCountryOrRegionServingStateReason
+type CampaignCountryOrRegionServingStateReasons map[string][]CampaignCountryOrRegionServingStateReason
 
 // CampaignCountryOrRegionServingStateReason is a reason that returns when a campaign can’t run for a specified country or region.
 type CampaignCountryOrRegionServingStateReason string
