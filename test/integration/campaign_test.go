@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 /**
@@ -20,12 +21,12 @@ package integration
 
 import (
 	"context"
-	"testing"
-
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestListCampaigns(t *testing.T) {
+	NewClient()
 	campaignListResponse, _, err := client.Campaigns.GetAllCampaigns(context.Background(), nil)
 	assert.NoError(t, err, "ListCampaigns responded with an error")
 	assert.NotEmpty(t, campaignListResponse.Campaigns, "ListCampaigns returned no campaignListResponse")
@@ -34,5 +35,4 @@ func TestListCampaigns(t *testing.T) {
 	campaignResponse, _, err := client.Campaigns.GetCampaign(context.Background(), firstCampaign.ID)
 	assert.NoError(t, err, "GetCampaign responded with an error")
 	assert.NotNil(t, campaignResponse.Campaign.Name)
-
 }

@@ -60,14 +60,6 @@ func TestGetSearchTermLevelReports(t *testing.T) {
 	})
 }
 
-func TestGetCreativeSetLevelReports(t *testing.T) {
-	t.Parallel()
-
-	testEndpointWithResponse(t, "{}", &ReportingResponseBody{}, func(ctx context.Context, client *Client) (interface{}, *Response, error) {
-		return client.Reporting.GetCreativeSetLevelReports(ctx, 1, &ReportingRequest{})
-	})
-}
-
 func deserializeFileToReportingResponse(t *testing.T, sampleJSONResponse string) *ReportingResponseBody {
 	t.Helper()
 

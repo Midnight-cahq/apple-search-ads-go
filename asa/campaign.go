@@ -190,11 +190,11 @@ type Campaign struct {
 	AdamID                             int64                                      `json:"adamId,omitempty"`
 	AdChannelType                      CampaignAdChannelType                      `json:"adChannelType,omitempty"`
 	BillingEvent                       string                                     `json:"billingEvent,omitempty"`
-	BudgetAmount                       *Money                                     `json:"budgetAmount,omitempty"`
+	BudgetAmount                       *Money                                     `json:"budgetAmount"`
 	BudgetOrders                       []int64                                    `json:"budgetOrders,omitempty"`
 	CountriesOrRegions                 []string                                   `json:"countriesOrRegions,omitempty"`
 	CountryOrRegionServingStateReasons CampaignCountryOrRegionServingStateReasons `json:"countryOrRegionServingStateReasons,omitempty"`
-	DailyBudgetAmount                  *Money                                     `json:"dailyBudgetAmount,omitempty"`
+	DailyBudgetAmount                  *Money                                     `json:"dailyBudgetAmount"`
 	Deleted                            bool                                       `json:"deleted,omitempty"`
 	DisplayStatus                      CampaignDisplayStatus                      `json:"displayStatus,omitempty"`
 	EndTime                            *DateTime                                  `json:"endTime,omitempty"`
